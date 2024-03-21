@@ -2,7 +2,7 @@ import { RecipeModel } from "../models/recipe.js";
 
 export const addRecipe = async (req, res, next) => {
    try {
-    // Adda recipe to the data base
+    // Add recipe to the data base
     const createresult = await RecipeModel.create(req.body)
     // return response
     res.json(createresult);
@@ -18,7 +18,7 @@ export const addRecipe = async (req, res, next) => {
 export const getRecipes = async(req, res, next) => {
     try {
         // Get all recipes from database
-        const findRecipes = await RecipeModel.find(req.body)
+        const findRecipes = await RecipeModel.find()
         // Return response
         res.status(200).json(findRecipes)
     } catch (error) {
